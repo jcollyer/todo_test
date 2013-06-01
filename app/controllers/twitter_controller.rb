@@ -5,4 +5,11 @@ class TwitterController < ApplicationController
 
     redirect_to root_path
   end
+
+  # Public: Signs user out of todo.
+  def signout
+    self.current_user = nil
+
+    redirect_to root_path
+  end
 end

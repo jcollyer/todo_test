@@ -1,9 +1,7 @@
 welcome!
 
 <% if current_user %>
-    <%= link_to "Sign out", "" %>
-  <% else %>
-    <%= link_to "Sign in", "/auth/twitter" %>
-  <% end %>
-
-<%= link_to "Sign in with Twitter", "/twitter/callback" %>
+  <%= current_user.username %> <%= link_to "Sign out", signout_path %>
+<% else %>
+  <%= link_to "Sign in", "/auth/twitter" %>
+<% end %>

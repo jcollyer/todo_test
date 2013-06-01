@@ -6,6 +6,7 @@ Todo::Application.routes.draw do
   root 'static#index'
 
   get "/auth/twitter/callback" => "twitter#callback"
+  get "/signout" => "twitter#signout", :as => :signout
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
