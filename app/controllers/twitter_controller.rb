@@ -1,9 +1,10 @@
 class TwitterController < ApplicationController
+
   def callback
     user = User.from_omniauth(omniauth)
     self.current_user = user
 
-    redirect_to root_path
+    redirect_to session[:return_to] || lists_path
   end
 
   # Public: Signs user out of todo.

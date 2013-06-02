@@ -3,9 +3,14 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  # Render the homepage.
-   def homepage; end
 
+  # Public: Is the user signed in?
+  #
+  # Returns a TrueClass or FalseClass.
+  def signed_in?
+   !!current_user
+  end
+  helper_method :signed_in?
 
   # Internal: Set the currently logged in user for request and session.
   def current_user
@@ -39,5 +44,12 @@ class ApplicationController < ActionController::Base
   # Returns a Hash.
   def omniauth
     request.env['omniauth.auth']
+  end
+
+  # Internal: Require the user to be signed in.
+  def signin_required
+    return if signed_in?
+    session[:return_to] = request.path if request.path
+    redirect_to "/auth/twitter"
   end
 end

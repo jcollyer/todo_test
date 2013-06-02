@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+
+  has_many :lists
   # Public: Find or create user with omniauth attributes.
   #
   # omniauth - Omniauth Hash.
