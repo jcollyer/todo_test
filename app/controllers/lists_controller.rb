@@ -27,7 +27,8 @@ class ListsController < ApplicationController
   # POST /lists.json
   def create
     @list = List.new do |list|
-      list.name = params[:name]
+      list.name = params[:list][:name]
+      list.description = params[:list][:description]
       list.user_id = current_user.id
     end
 
@@ -45,6 +46,10 @@ class ListsController < ApplicationController
   # PATCH/PUT /lists/1
   # PATCH/PUT /lists/1.json
   def update
+    list = List.find(params[:id])
+    list.name = params[:list][:name]
+    list.description = params[:list][:description]
+
     respond_to do |format|
       if @list.update(list_params)
         format.html { redirect_to @list, notice: 'List was successfully updated.' }
@@ -74,6 +79,6 @@ class ListsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def list_params
-      params.require(:list).permit(:name, :status)
+      params.require(:list).permit(:name, :discription, :status)
     end
 end

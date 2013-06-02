@@ -12,8 +12,8 @@ welcome!
   <thead>
     <tr>
       <th>Name</th>
+      <th>Description</th>
       <th>Status</th>
-      <th></th>
       <th></th>
       <th></th>
     </tr>
@@ -23,6 +23,7 @@ welcome!
     <% @lists.each do |list| %>
       <tr>
         <td><%= list.name %></td>
+        <td><%= list.description %></td>
         <td><%= list.status %></td>
         <td><%= link_to 'Show', list %></td>
         <td><%= link_to 'Edit', edit_list_path(list) %></td>
