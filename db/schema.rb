@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 20130601232341) do
   create_table "lists", force: true do |t|
     t.string   "name"
     t.text     "description"
-    t.boolean  "status"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
