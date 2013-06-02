@@ -1,6 +1,8 @@
-<h1>Editing list</h1>
+<div class="top">
+  <%= link_to 'Show', @list, :class => "button" %>
+  <%= link_to 'Back', lists_path, :class => "button" %>
+  <h1>Editing list</h1>
+</div>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @list %> |
-<%= link_to 'Back', lists_path %>

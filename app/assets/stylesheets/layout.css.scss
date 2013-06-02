@@ -1,0 +1,99 @@
+*{
+  margin:0px;
+}
+body{
+  background: lightblue;
+  font-family: helvetica, sans-serif;
+  font-weight: lighter;
+}
+
+a.button,
+  .button{
+    color:#444;
+    float:left;
+    margin:0px;
+    padding:25px;
+    text-decoration: none;
+    &:hover{
+      background:#fff;
+      color:#4bb1d2;
+      cursor:pointer;
+    }
+  }
+
+.top{
+  background:#4bb1d2;
+  position:relative;
+  h1{
+    text-align: center;
+    padding:15px 200px 15px 0px ;
+  }
+  a.button,
+  .button{
+    color:#444;
+    float:left;
+    margin:0px;
+    padding:25px;
+    text-decoration: none;
+    &:hover{
+      background:#fff;
+      color:#4bb1d2;
+      cursor:pointer;
+    }
+  }
+  .user_name{
+    padding:0 0 0 107px;
+    position: absolute;
+    right:0px;
+    top:0px;
+    p{
+      position: absolute;
+      left:0px;
+      top:25px;
+    }
+  }
+}
+
+.box{
+  margin:20px auto;
+  width:360px;
+  .field {
+    height:50px;
+    p{
+      text-align: center;
+      .hh1{
+        background:#4bb1d2;
+        color:white;
+        font-size: 120%;
+        margin:5px;
+        padding:5px;
+      }
+    }
+    label{
+      float:left;
+      font-size: 110%;
+      padding:10px 10px 0 0px;
+      text-align: right;
+      width:100px;
+    }
+    input[type=text]{
+      float:left;
+      font-size: 120%;
+      padding:10px;
+    }
+    input[type=submit]{
+      background:none;
+      border:none;
+      color:#444;
+      float:right;
+      font-size: 110%;
+      margin:10px;
+      padding:10px;
+      &:hover{
+        background:#4bb1d2;
+        color:white;
+        cursor:pointer;
+      }
+    }
+  }
+}

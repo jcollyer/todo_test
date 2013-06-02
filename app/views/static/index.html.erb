@@ -1,7 +1,11 @@
-welcome!
-
-<% if current_user %>
-  <%= current_user.username %> <%= link_to "Sign out", signout_path %>
-<% else %>
-  <%= link_to "Sign in", "/auth/twitter" %>
-<% end %>
+<div class="top">
+  <h1>welcome!</h1>
+  <div class="user_name">
+    <% if current_user %>
+      <p><%= current_user.username %></p>
+      <%= link_to "Sign out", signout_path, :class => "button" %>
+    <% else %>
+      <%= link_to "Sign in", "/auth/twitter", :class => "button" %>
+    <% end %>
+  </div>
+</div>
